@@ -13,7 +13,31 @@ public class Cuenta {
     int numero; 
     String titular;
     
-    void depositar(double valor){   
-        saldo  =+ valor;
+    public void depositar(double valor){   
+        saldo  += valor;
+    }
+    
+    public void changeNumber(int numero){   
+        this.numero += numero;
+    }
+    
+    public boolean retirar (double value){
+        if(this.saldo >= value) {
+            this.saldo -= value;
+            return true;
+        }
+        else {
+            return false;
+        }            
+    }
+    
+    public boolean transferir(double valor, Cuenta cuenta){
+        if(this.saldo >= valor) {
+            this.saldo -= valor;
+            cuenta.depositar(valor);
+            return true;
+        }else{
+            return false;
+        }
     }
 }
