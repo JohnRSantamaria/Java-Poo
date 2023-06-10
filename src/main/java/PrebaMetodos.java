@@ -7,13 +7,12 @@
  *
  * @author ResetStoreX
  */
-public class Cuenta {
-    double saldo; 
-    int agencia;
-    int numero; 
-    String titular;
-    
-    void depositar(double valor){   
-        saldo  =+ valor;
+public class PrebaMetodos {
+    public static void main(String[] args) {
+        Cuenta cuentaDeJohn = new Cuenta();
+        cuentaDeJohn.depositar(500);
+        
+        
+        System.out.println(cuentaDeJohn.saldo);
     }
 }
