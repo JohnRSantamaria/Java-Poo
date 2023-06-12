@@ -7,14 +7,11 @@
  *
  * @author ResetStoreX
  */
-public class TestReferencia3 {
+public class PruebaConstructor {
     public static void main(String[] args) {
-        Cuenta cuentaDeDiego = new Cuenta(1);
-        
-        cuentaDeDiego.getTitular().setNombre("Diego");
-
-        System.out.println(cuentaDeDiego.getTitular().getNombre());
-        
+        Cuenta cuenta = new Cuenta(50);       
+        Cuenta cuenta2 = new Cuenta(50);  
+        Cuenta cuenta3 = new Cuenta(50);  
         
     }
 }

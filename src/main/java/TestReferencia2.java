@@ -10,19 +10,19 @@
 public class TestReferencia2 {
     public static void main(String[] args) {
         Cliente diego = new Cliente();
-        diego.nombre = "Diego";
-        diego.documento = "1231321";
-        diego.telefono = "1232131231";              
+        diego.setNombre("Diego");
+        diego.setDocumento("1231321");
+        diego.setTelefono("1231231");       
         
-        Cuenta cuentaDeDiego = new Cuenta();
+        Cuenta cuentaDeDiego = new Cuenta(1);
         
-        cuentaDeDiego.agencia = 1;
-        cuentaDeDiego.numero = 1;
-        cuentaDeDiego.titular = diego;
+        cuentaDeDiego.setAgencia(1);
+        cuentaDeDiego.setNumero(1);
+        cuentaDeDiego.setTitular(diego);        
         
-        System.out.println(cuentaDeDiego.titular.documento );
+        System.out.println(cuentaDeDiego.getTitular().getDocumento());
         
-        System.out.println(cuentaDeDiego.titular);
+        System.out.println(cuentaDeDiego.getTitular());
         System.out.println(diego);
             
     }

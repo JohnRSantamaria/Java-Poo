@@ -7,14 +7,13 @@
  *
  * @author ResetStoreX
  */
-public class TestReferencia3 {
+public class PruebaAcceso {
     public static void main(String[] args) {
-        Cuenta cuentaDeDiego = new Cuenta(1);
-        
-        cuentaDeDiego.getTitular().setNombre("Diego");
-
-        System.out.println(cuentaDeDiego.getTitular().getNombre());
-        
-        
+        Cuenta cuenta = new Cuenta(1);        
+        cuenta.setAgencia(-22);
+        cuenta.deposita(400);
+        cuenta.saca(300);
+        System.out.println(cuenta.getSaldo());
+        System.out.println(cuenta.getAgencia());
     }
 }

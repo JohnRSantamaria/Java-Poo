@@ -7,33 +7,83 @@
  *
  * @author ResetStoreX
  */
+
 public class Cuenta {
-    double saldo; 
-    int agencia;
-    int numero; 
-    Cliente titular = new Cliente();
+
+    private double saldo;
+    private int agencia;
+    private int numero;
+    private Cliente titular;
     
-    public void depositar(double valor){   
-        saldo  += valor;
+    private static int total = 0;
+
+
+    public Cuenta(int agencia){        
+        if(agencia <= 0 ){
+            System.out.println("No se permite 0: "+agencia);     
+            this.agencia = 1;
+        }     
+        else{
+            this.agencia = agencia;
+        }        
+        total++;        
+        System.out.println("numero actula de cuentas: "+total);
     }
     
-    public boolean retirar (double value){
-        if(this.saldo >= value) {
-            this.saldo -= value;
-            return true;
-        }
-        else {
-            return false;
-        }            
-    }
     
-    public boolean transferir(double valor, Cuenta cuenta){
+    public void deposita(double valor) {
+        this.saldo = this.saldo + valor;
+    }
+
+    public boolean saca(double valor) {
         if(this.saldo >= valor) {
             this.saldo -= valor;
-            cuenta.depositar(valor);
             return true;
-        }else{
+        } else {
             return false;
         }
     }
+
+    public boolean transfiere(double valor, Cuenta destino) {
+        if(this.saldo >= valor) {
+            this.saldo -= valor;
+            destino.deposita(valor);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(int agencia) {
+        if(agencia > 0){
+            this.agencia = agencia; 
+        }else{
+            System.out.println("No estan permitidos los valores negativos");
+        }
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public Cliente getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
+
 }

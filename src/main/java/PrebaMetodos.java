@@ -9,24 +9,24 @@
  */
 public class PrebaMetodos {
     public static void main(String[] args) {
-        Cuenta cuentaDeJohn = new Cuenta();
-        Cuenta cuentaDeJuli = new Cuenta();
+        Cuenta cuentaDeJohn = new Cuenta(1);
+        Cuenta cuentaDeJuli = new Cuenta(1);
         
-        cuentaDeJuli.depositar(1000);
-        cuentaDeJohn.depositar(500);
+        cuentaDeJuli.deposita(1000);
+        cuentaDeJohn.deposita(500);
         
-        System.out.println(cuentaDeJuli.saldo);
-        System.out.println(cuentaDeJohn.saldo);
+        System.out.println(cuentaDeJuli.getSaldo());
+        System.out.println(cuentaDeJohn.getSaldo());
 
-        if(cuentaDeJuli.transferir(400, cuentaDeJohn)){
+        if(cuentaDeJuli.transfiere(400, cuentaDeJohn)){
             System.out.println("Transferencia Exitosa");
         }else {
             System.out.println("No es posible");
         }
         
-        System.out.println(cuentaDeJohn.saldo);
+        System.out.println(cuentaDeJohn.getSaldo());
         
-        System.out.println(cuentaDeJuli.saldo);
+        System.out.println(cuentaDeJuli.getSaldo());
         
     }
 }
