@@ -11,14 +11,10 @@ public class Cuenta {
     double saldo; 
     int agencia;
     int numero; 
-    String titular;
+    Cliente titular = new Cliente();
     
     public void depositar(double valor){   
         saldo  += valor;
-    }
-    
-    public void changeNumber(int numero){   
-        this.numero += numero;
     }
     
     public boolean retirar (double value){

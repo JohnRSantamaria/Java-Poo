@@ -5,7 +5,7 @@
 
 /**
  *
- * @author ResetStoreX
+ * @author John Santamaria
  */
 public class PrebaMetodos {
     public static void main(String[] args) {
